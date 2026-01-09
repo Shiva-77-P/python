@@ -1,0 +1,24 @@
+name: Setup ci for python application
+  
+on:
+  push:
+    branches: [ "main" ]
+
+  jobs:
+    build_and_test:
+      runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-latest: "3.10"
+
+      - name: install dependiences
+        run: pip install -r requirements.txt
+
+      - name: run python scripit
+        run: python one.py
