@@ -1,0 +1,18 @@
+pipeline {
+    // 1. AGENT: Define the container first
+    agent {
+        docker { 
+            image 'python:3.10' 
+        }
+    }
+
+    // 2. STAGES: This is a SIBLING to agent (Same indentation level)
+    stages {
+        stage('Build') {
+            steps {
+                // 3. COMMAND: This assumes 'one.py' is already in your workspace
+                sh 'python one.py'
+            }
+        }
+    }
+}
