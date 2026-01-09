@@ -14,3 +14,5 @@ for mark in marks:
         print("average")
     else:
         print("fail")
+
+print(shiva)
