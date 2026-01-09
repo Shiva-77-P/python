@@ -15,10 +15,10 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-latest: "3.10"
+          python-version: "3.10"
 
       - name: install dependiences
-        run: pip install -r requirements.txt
+        run: if [ -f "requirement.txt" ]; then pip install -r requirements.txt; fi
 
       - name: run python scripit
         run: python one.py
