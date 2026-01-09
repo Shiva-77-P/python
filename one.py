@@ -15,4 +15,3 @@ for mark in marks:
     else:
         print("fail")
 
-print(shiva)
